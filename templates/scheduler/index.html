@@ -3,7 +3,10 @@
         <div class="col-lg-8 col-lg-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <span class="panel-title">Schedule Tasks</span>
+                    <h3 class="panel-title">
+                       Job Scheduler 
+                        <span class="label label-primary pull-right" ng-show="tasksLoaded && (total()>0)"> Upcoming {{total()}}</span> 
+                    </h3>
                 </div>
                 <div class="panel-body">
                     <div class="row">
@@ -39,10 +42,9 @@
 
                 </div>
                 <table class="table table-bordered table-condensed table-responsive" ng-show="tasksLoaded && (total() > 0)">
-                    <caption> <span class="label label-primary">Total Jobs: {{total()}}</span></caption>
                     <thead>
                     <tr>
-                        <th>Id</th>
+                        <th>Job Id</th>
                         <th>Scheduled Date</th>
                         <th>Scheduled Time</th>
                         <th>Actions</th>
@@ -50,7 +52,7 @@
                     </thead>
                     <tbody>
                     <tr ng-repeat="(id, task) in all()">
-                        <td>{{id}}</td>
+                        <td>J-{{id}}</td>
                         <td>{{task.date}}</td>
                         <td>{{task.time}}</td>
                         <td>

@@ -51,13 +51,16 @@ angular.module("firebase.demo", ["firebase", "ngRoute"])
     .config(['$routeProvider',
         function ($routeProvider) {
             $routeProvider
-                .when("/", {
+                .when("/products", {
                     templateUrl: 'templates/products/index.html',
                     controller: 'ProductCtrl'
                 })
                 .when("/scheduler", {
                     templateUrl: 'templates/scheduler/index.html',
                     controller: 'SchedulerCtrl'
+                })
+                .when("/", {
+                    templateUrl: 'templates/main/index.html',
                 })
         }
     ]);
