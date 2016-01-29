@@ -50,12 +50,23 @@ angular.module("firebase.demo")
         function add(o) {
             o.date = $("#scheduled-date").val();
             o.time = $("#scheduled-time").val();
-            console.log(o);
+            if (o.date.trim() == "" && o.time.trim() == ""){
+                alert("Date & Time can't be empty");
+                return false;
+            }
+            if (o.date.trim() == ""){
+                alert("Date can't be empty");
+                return false;
+            }
+            if (o.time.trim() == ""){
+                alert("Time can't be empty");
+                return false;
+            }
             tasks.add(o);
-            resetModel(o);
+            resetModel();
         }
 
-        function resetModel(o) {
+        function resetModel() {
             $("#scheduled-date").val("");
             $("#scheduled-time").val("");
         }
