@@ -1,0 +1,84 @@
+<div class="container top">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <span class="panel-title">Schedule Tasks</span>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6">
+                            <div class="input-group date" ng-init="initDate()">
+                                <input id="scheduled-date" type="text" class="form-control"
+                                       date-picker="NewDateTime.date"
+                                       ng-model="NewDateTime.date">
+                                <span class="input-group-addon">
+                                    <i class="glyphicon glyphicon-th"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3">
+                            <div class="input-group bootstrap-timepicker timepicker" ng-init="initTime()">
+                                <input id="scheduled-time"
+                                       type="text"
+                                       class="form-control input-small"
+                                       data-provide="timepicker"
+                                       data-minute-step="1"
+                                       data-show-seconds="true"
+                                       data-append-widgets-to="body"
+                                       ng-model="NewDateTime.time">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3">
+                            <button class="btn btn-default"
+                                    ng-click="add(NewDateTime)">Schedule
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+                <table class="table table-bordered table-condensed table-responsive" ng-show="tasksLoaded && (total() > 0)">
+                    <caption> <span class="label label-primary">Total Jobs: {{total()}}</span></caption>
+                    <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Scheduled Date</th>
+                        <th>Scheduled Time</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="(id, task) in all()">
+                        <td>{{id}}</td>
+                        <td>{{task.date}}</td>
+                        <td>{{task.time}}</td>
+                        <td>
+                            <button class="btn btn-default" ng-click="delete(id)"
+                                    data-toggle="tooltip" data-placement="left" title="Delete">
+                                <span class="glyphicon glyphicon-trash text-danger"></span>
+                            </button>
+                            <button class="btn btn-default" ng-click=""
+                                    data-toggle="tooltip" data-placement="right" title="Run now">
+                                <span class="glyphicon glyphicon-play text-success"></span>
+                            </button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="progress progress-striped active progress-bar-primary"
+                 ng-hide="tasksLoaded">
+                <div class="progress-bar progress-bar-primary"
+                     role="progressbar"
+                     aria-valuenow="100"
+                     aria-valuemin="0"
+                     aria-valuemax="100"
+                     style="width: 100%">Fetching tasks. Please wait...
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

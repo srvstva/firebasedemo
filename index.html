@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="firebase.demo">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Angular Firebase Demo</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="bower_components/bootstrap-timepicker/css/timepicker.min.css">
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
+    <script src="bower_components/firebase/firebase.js"></script>
+    <script src="bower_components/angularfire/dist/angularfire.min.js"></script>
+    <script src="bower_components/jquery/jquery.min.js"></script>
+    <script src="bower_components/moment/min/moment.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+    <script src="bower_components/bootstrap-timepicker/js/bootstrap-timepicker.js"></script>
+    <script src="js/fireapp.js"></script>
+    <script src="js/product.js"></script>
+    <script src="js/scheduler.js"></script>
+    <style>
+        .top {
+            padding-top: 80px;
+        }
+        .red{
+            color: #843534;
+        }
+        .muted{
+            background-color: #fcfcfc;
+        }
+    </style>
+
+</head>
+<body ng-cloak class="muted">
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="#" class="navbar-brand">Glaring Torch</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#/">Products</a></li>
+            <li><a href="#/scheduler">Scheduler</a></li>
+        </ul>
+    </div>
+</nav>
+<div ng-view></div>
+</body>
+</html>
