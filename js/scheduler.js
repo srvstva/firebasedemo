@@ -6,7 +6,7 @@ angular.module("firebase.demo")
                 todayHighlight: true
             });
             console.log('Init called');
-            $("[data-toggle='tooltip']').tooltip();
+            $("[data-toggle='tooltip']").tooltip();
         };
         $scope.initTime = function () {
             $('#scheduled-time').timepicker();
